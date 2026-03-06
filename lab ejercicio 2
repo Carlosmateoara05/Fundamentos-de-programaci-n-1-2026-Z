@@ -1,0 +1,25 @@
+Algoritmo CompraTienda
+    
+    Definir nombreCliente Como Cadena
+    Definir cantidad Como Entero
+    Definir totalPagar Como Real
+    Definir PRECIO_UNITARIO Como Entero
+    
+    PRECIO_UNITARIO <- 8
+    
+    
+    Escribir "Ingrese el nombre del cliente:"
+    Leer nombreCliente
+    
+   
+    Escribir "Ingrese la cantidad de productos comprados:"
+    Leer cantidad    
+    
+    totalPagar <- cantidad * PRECIO_UNITARIO
+    
+    Escribir "------------------------------------"
+    Escribir "Cliente: ", nombreCliente
+    Escribir "Total a pagar: ", totalPagar, " Bs."
+    Escribir "------------------------------------"
+    
+FinAlgoritmo
