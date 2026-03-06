@@ -1,0 +1,20 @@
+Algoritmo DatosDelEstudiante
+	
+	Escribir "Nombrecompleto:"
+	Leer nombre completo
+	
+	Escribir "Edad:"
+	Leer edad
+	
+	Escribir "Carrera:"
+	Leer carrera 
+	
+	Escribir "Semestre:"
+	Leer semestre 
+	
+	Escribir "Nombrecompleto:", nombre completo
+	Escribir "Edad:", edad
+	Escribir "Carrera:", carrera
+	Escribir "Semestre:", semestre 
+	
+FinAlgoritmo	
