@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+
+    char nombre[100];
+    int cantidad;
+    float precio, total;
+
+    printf("Ingrese el nombre del cliente: ");
+    fgets(nombre, sizeof(nombre), stdin);
+
+    printf("Ingrese el precio del producto: ");
+    scanf("%f", &precio);
+
+    printf("Ingrese la cantidad de productos comprados: ");
+    scanf("%d", &cantidad);
+
+    total = precio * cantidad;
+
+    printf("\n----- RESUMEN DE COMPRA -----\n");
+    printf("Cliente: %s", nombre);
+    printf("Cantidad de productos: %d\n", cantidad);
+    printf("Total a pagar: %.2f\n", total);
+
+    return 0;
+}
