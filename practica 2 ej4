@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+    char nombre[100];
+    float salario, aguinaldo;
+    int meses, tipo_trabajador;
+
+    
+    printf("Ingrese el nombre completo del trabajador: ");
+    scanf(" %[^\n]", nombre);
+
+    printf("\nSeleccione el tipo de trabajador:\n");
+    printf("1. Obrero (mínimo 1 mes para aguinaldo)\n");
+    printf("2. Empleado (mínimo 3 meses para aguinaldo)\n");
+    printf("Opción (1 o 2): ");
+    scanf("%d", &tipo_trabajador);
+
+   
+    printf("\nIngrese el salario mensual (en Bs.): ");
+    scanf("%f", &salario);
+    
+    printf("Ingrese la cantidad de meses trabajados en el año (0 a 12): ");
+    scanf("%d", &meses);
+
+    
+    if (meses < 0 || meses > 12) {
+        printf("\nError: Los meses deben estar entre 0 y 12.\n");
+        return 1;
+    }
+
+    
+    if ((tipo_trabajador == 1 && meses < 1) || (tipo_trabajador == 2 && meses < 3)) {
+        aguinaldo = 0.0;
+        printf("\nAviso: El trabajador no cumple con el tiempo mínimo de servicio continuo establecido por ley.\n");
+    } else {
+        aguinaldo = (salario * meses) / 12.0;
+    }
+
+   
+    printf("\n--- Liquidación de Aguinaldo Navideño ---\n");
+    printf("Trabajador: %s\n", nombre);
+    printf("Meses trabajados: %d\n", meses);
+    printf("Aguinaldo a percibir: %.2f Bs.\n", aguinaldo);
+
+    return 0;
+}
