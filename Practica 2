@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    double R, H;
+    float area_lateral, area_total, volumen;
+    #define PI 3.14
+    
+    printf("Ingrese el radio del cilindro (R): ");
+    scanf("%f" , &R);
+    
+    printf("Ingrese la altura del cilindro (H): ");
+    scanf("%f" , &H);
+    
+    area_lateral = 2 * PI * R * H;
+    area_total   = 2 * PI * R * (R + H);
+    volumen      = PI * (R * R) * H;
+    
+     printf("\n--- Resultados ---\n");
+    printf("Área Lateral: %.2lf\n", area_lateral);
+    printf("Área Total:   %.2lf\n", area_total);
+    printf("Volumen:      %.2lf\n", volumen);
+
+
+    return 0;
+}
