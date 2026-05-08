@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath>  
+using namespace std;
+
+void leerDatos(double &x, int &y) {
+    cout << "Ingrese la base: ";
+    cin >> x;
+
+    cout << "Ingrese el exponente entero: ";
+    cin >> y;
+}
+
+
+double POTEN(double x, int y) {
+    return pow(x, y);
+}
+
+
+void mostrarResultado(double x, int y, double resultado) {
+    cout << "\nResultado:" << endl;
+    cout << x << " elevado a " << y << " es = " << resultado << endl;
+}
+
+int main() {
+    double base, resultado;
+    int exponente;
+
+   
+    leerDatos(base, exponente);
+
+    
+    resultado = POTEN(base, exponente);
+
+   
+    mostrarResultado(base, exponente, resultado);
+
+    return 0;
+}
