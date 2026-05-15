@@ -1,0 +1,98 @@
+#include<iostream>
+using namespace std;
+
+void mostrarMenu();
+float obtenerPrecio(int plan);
+float calcularSubtotal(float precio, int meses);
+float calcularDescuento(float subtotal, int meses);
+void mostrarResultado(string nombre, float subtotal, float descuento, float total);
+
+int main()
+{
+    string nombre;
+    int plan, meses;
+
+    float precio;
+    float subtotal;
+    float descuento;
+    float total;
+
+    mostrarMenu();
+
+    cout<<"Ingrese nombre del cliente: ";
+    cin>>nombre;
+
+    cout<<"Seleccione tipo de plan: ";
+    cin>>plan;
+
+    cout<<"Cantidad de meses: ";
+    cin>>meses;
+
+    precio = obtenerPrecio(plan);
+
+    subtotal = calcularSubtotal(precio, meses);
+
+    descuento = calcularDescuento(subtotal, meses);
+
+    total = subtotal - descuento;
+
+    mostrarResultado(nombre, subtotal, descuento, total);
+
+    return 0;
+}
+
+
+void mostrarMenu()
+{
+    cout<<"===== PLANES DEL GIMNASIO ====="<<endl;
+    cout<<"1. Basico     -> 100 Bs"<<endl;
+    cout<<"2. Intermedio -> 180 Bs"<<endl;
+    cout<<"3. Premium    -> 250 Bs"<<endl;
+}
+
+float obtenerPrecio(int plan)
+{
+    if(plan == 1)
+    {
+        return 100;
+    }
+    else if(plan == 2)
+    {
+        return 180;
+    }
+    else if(plan == 3)
+    {
+        return 250;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+float calcularSubtotal(float precio, int meses)
+{
+    return precio * meses;
+}
+
+float calcularDescuento(float subtotal, int meses)
+{
+    if(meses > 3)
+    {
+        return subtotal * 0.15;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void mostrarResultado(string nombre, float subtotal, float descuento, float total)
+{
+    cout<<endl;
+    cout<<"===== FACTURA ====="<<endl;
+    cout<<"Cliente: "<<nombre<<endl;
+    cout<<"Subtotal: "<<subtotal<<" Bs"<<endl;
+    cout<<"Descuento: "<<descuento<<" Bs"<<endl;
+    cout<<"Total final: "<<total<<" Bs"<<endl;
+}
